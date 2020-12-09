@@ -1,0 +1,12 @@
+{
+'id': ['30134-KENIC'],
+'status': ['clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited',
+'clientTransferProhibited https://icann.org/epp#clientTransferProhibited'],
+'creation_date': [datetime.datetime(2010, 9, 4, 15, 54, 48)],
+'expiration_date': [datetime.datetime(2021, 9, 4, 15, 54, 48)],
+'updated_date': [datetime.datetime(2020, 8, 7, 8, 0, 38)],
+'registrar': ['EAC directory'],
+'whois_server': [': whois.kenic.or.ke'],
+'nameservers': ['dean.ns.cloudflare.com', 'vita.ns.cloudflare.com'],
+'emails': ['info.KE@eacdirectory.co.ke'],
+'contacts': {'registrant': {'handle': 'zegct-4p8ll', 'name': 'Redacted | Registry Policy', 'organization': 'Devsons Industries Ltd', 'city': 'Mombasa', 'state': 'Coast', 'postalcode': '80100', 'country': 'KE', 'phone': 'Redacted | Registry Policy', 'email': 'Redacted | Registry Policy', 'street': 'P.O. Box 82011'},'tech': None, 'admin': None, 'billing': None}, 'raw': ['Domain Name: devsons.co.ke\nRegistry Domain ID: 30134-KENIC\nRegistry WHOIS Server:: whois.kenic.or.ke\nRegistrar URL: https://domains.eacdirectory.co.ke\nUpdated Date: 2020-08-07T08:00:38.219Z\nCreation Date: 2010-09-04T15:54:48.372Z\nRegistry Expiry Date: 2021-09-04T15:54:48.388Z\nRegistrar Registration Expiration Date: 2021-09-04T15:54:48.388Z\nRegistrar: EAC directory\nRegistrar Abuse Contact Email: info.KE@eacdirectory.co.ke\nRegistrar Abuse Contact Phone: 0709 399 000\nRegistrar Phone: 0709 399 000\nRegistrar Customer Service Contact: info.KE@eacdirectory.co.ke\nRegistrar Customer Service Email: info.KE@eacdirectory.co.ke\nDomain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited\nDomain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited\nRegistry Registrant ID: zegct-4p8ll\nRegistrant Name: Redacted | Registry Policy\nRegistrant Organization: Devsons Industries Ltd\nRegistrant Street: P.O. Box 82011\nRegistrant City: Mombasa\nRegistrant State/Province: Coast\nRegistrant Postal Code: 80100\nRegistrant Country: KE\nRegistrant Phone: Redacted | Registry Policy\nRegistrant Email: Redacted | Registry Policy\nName Server: dean.ns.cloudflare.com\nName Server: vita.ns.cloudflare.com\nDNSSEC: unsigned\n>>> Last update of WHOIS database: 2020-12-09T11:16:12.774Z <<<\n\nFor more information on Whois status codes, please visit https://icann.org/epp\n\n\n']}
