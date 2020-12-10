@@ -33,10 +33,9 @@ def chck_dom(dom):
 
 def chck_dom2(dom):
     info = pythonwhois.get_whois(dom)
-    print(info)
+    print("All info: ", info)
     res = {key: info[key] for key in info.keys() & {'contacts'}}
-    print(res)
-    res2 = get_registrar(res)
+    #res2 = get_registrar(res)
     return res
 
 def inp_email():
@@ -45,10 +44,32 @@ def inp_email():
 
 def get_registrar(res):
     #res2 = {key: res[key] for key in res.keys() & {'registrant'}}
-    res2 = res.get('contacts',{}).get('registrant')
-    res3 = {key: res2[key] for key in res2.keys() & {'country'}}
-    print(res3)
-    return res3
+    res2 = res.get('contacts',{}).get('registrant',{}).get('country',{})
+    #res3 = {key: res2[key] for key in res2.keys() & {'country'}}
+    print(res2)
+    return res2
+
+def get_country(dom_info):
+    if 'contacts' in y:
+        # print("\nContacts: ", y)
+        if "registrant" in y.get('contacts', {}):
+            # print("\nRegistrant: ", y.get('contacts',{}))
+            reg_det = y.get('contacts', {})
+            reg_dat = {key: reg_det[key] for key in reg_det.keys() & {'registrant'}}
+            # print("trial: ", reg_dat.get('registrant'))
+            if reg_dat.get('registrant') == None:
+                print("\nCountry not found")
+            else:
+                # print("\nCountry found: ")
+                dom_country = str(reg_dat.get('registrant').get('country'))
+                print("Domain's Active Country:", dom_country)
+        else:
+            print("\nRegistrant not found")
+    else:
+        print("\nBool False")
+
 
 x = inp_email()
 y = chck_dom2(x)
+
+
