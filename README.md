@@ -7,4 +7,6 @@ It is a currently incomplete script, please refrain from using it
 
 The README will be updated when the script is complete.
 
+The cript is currently being tested.
+
 Thank you.
