@@ -1,4 +1,4 @@
-# Email-filtering-
+# Email-filter
 Script in python
 
 This script was created by Mir Agravat
