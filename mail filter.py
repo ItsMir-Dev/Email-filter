@@ -4,9 +4,11 @@ import whois
 import pythonwhois
 import csv
 
+#array that stores filtered emails
 filtered_mails = []
 
-def main():
+
+def main(): #main method that runs script with excel file and loads results to csv file
     loc = ".\\Mailing List Updated.xlsx"
 
     wb = xlrd.open_workbook(loc)
@@ -32,12 +34,13 @@ def main():
             pass
     add_to_file(filtered_mails)
 
-def file_loader():
+
+def file_loader(): #open any file
     mail_file = open(file="\\hpserver\\Devsons  Data\\Accounts\\MIR THE CHOTLI\\email list 1(James).xlsx")
     return mail_file
 
 
-def xl_read():
+def xl_read(): #reads an excel file .xls, .xlsx
     read_file = pds.read_excel(".\\EMAILS.xlsx",sheet_name="Sheet2")
     i = 0
     for i in range(0,100):
@@ -45,28 +48,29 @@ def xl_read():
         print(curr)
 
 
-def chck_dom(dom):
+def chck_dom(dom): #gets all domain information
     info = whois.whois(dom)
     print(info)
     return info
 
 
-def chck_dom2(dom):
+def chck_dom2(dom): #get all domain information, and filters to contact info
     try:
         info = pythonwhois.get_whois(dom)
         print("All info: ", info)
         res = {key: info[key] for key in info.keys() & {'contacts'}}
         return res
     except Exception:
+        print(dom + " domain doesnt exist")
         pass
 
 
-def inp_email():
+def inp_email(): #allows user to input an email address. Use for testing
     mail = str(input("Enter your email address: \n"))
     return mail
 
 
-def get_registrar(res):
+def get_registrar(res): #obtains registrar details of domain
     #res2 = {key: res[key] for key in res.keys() & {'registrant'}}
     res2 = res.get('contacts',{}).get('registrant',{}).get('country',{})
     #res3 = {key: res2[key] for key in res2.keys() & {'country'}}
@@ -74,7 +78,7 @@ def get_registrar(res):
     return res2
 
 
-def get_country(dom_info):
+def get_country(dom_info): #obtains country of operation for domain
     try:
         if 'contacts' in y:
             # print("\nContacts: ", y)
@@ -98,10 +102,16 @@ def get_country(dom_info):
         pass
 
 
-def add_to_file(email):
+def add_to_file(email): #adds array of emails to csv file
     with open('emails.csv','w+') as fp:
         write = csv.writer(fp, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         write.writerow(email)
 
 
+def unused(mail): #checks if domain is active
+    print(mail)
+
+
 main()
+#y = str(input("Enter your domain name: \n"))
+#chck_dom2(y)
